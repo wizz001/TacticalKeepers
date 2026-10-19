@@ -1,6 +1,7 @@
 /* Reference-matched header branding and hero headline */
 .hero-wordmark{display:block;width:min(470px,82%);height:auto;margin:0 0 23px;mix-blend-mode:screen}
 .training-hero-bg{background-image:url('/images/training/hero-goalkeeper-action.png')}
+.training-hero{position:relative}.training-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.08) saturate(.82)}
 .hero-bg{background-image:url('/images/hero-stadium.png')}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .site-header{height:118px;padding:17px 4.5%;gap:34px;background:linear-gradient(#020202 0%,rgba(2,2,2,.9) 58%,transparent 100%)}
