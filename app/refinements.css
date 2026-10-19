@@ -5,7 +5,7 @@
 .site-header{height:118px;padding:17px 4.5%;gap:34px;background:linear-gradient(#020202 0%,rgba(2,2,2,.9) 58%,transparent 100%)}
 .site-header>.brand .brand-lockup{display:none}
 .site-header>.brand .brand-crest{display:block!important;width:88px;height:82px;filter:drop-shadow(0 2px 6px #000)}
-.site-header>.brand .brand-silver-wordmark{display:block!important;width:190px;height:64px;object-fit:contain;mix-blend-mode:screen}
+.site-header>.brand .brand-silver-wordmark{display:block!important;width:280px;height:64px;object-fit:contain;mix-blend-mode:screen}
 @media(max-width:1100px){.site-header>.brand .brand-silver-wordmark{display:none!important}}
 .header-wordmark{display:none;flex-direction:column;margin-left:10px;font-family:Anton,'Arial Narrow',sans-serif;line-height:1;text-shadow:0 2px 5px #000}
 .site-header>.brand .header-wordmark{display:flex}
