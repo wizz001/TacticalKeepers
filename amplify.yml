@@ -8,8 +8,8 @@ frontend:
       commands:
         - npm run build
   artifacts:
-    # Amplify's Next.js static-export adapter reads the framework output from .next.
-    baseDirectory: .next
+    # This project uses Next.js static export; publish the generated HTML and assets.
+    baseDirectory: out
     files:
       - '**/*'
   cache:
