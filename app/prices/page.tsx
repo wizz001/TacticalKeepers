@@ -1,0 +1,12 @@
+import type {Metadata} from 'next'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import {BOOKING_URL} from '@/lib/links'
+
+export const metadata:Metadata={title:'Goalkeeper Training Prices | Tactical Keepers',description:'Tactical Keepers goalkeeper training prices for 1-to-1 and group sessions in Cheshire.'}
+
+export default function PricesPage(){return <main className="training-page contact-page prices-page"><Header/>
+ <section className="contact-intro"><div><p>PRICES</p><h1>TRAINING<br/><span>PRICELIST</span></h1><p>Choose the session format that best supports your development.</p></div></section>
+ <section className="training-pricing"><div className="first-session">YOUR <strong>1ST SESSION</strong> IS <b>FREE</b></div><div className="pricing-cards"><article className="price-card"><div><p className="price-card-label">PERSONALISED COACHING</p><h3>1-TO-1<br/>SESSIONS</h3><span className="price-duration">1 HOUR</span><ul><li>Personalised coaching</li><li>Focus on your individual goals</li><li>Technique, decision-making and confidence</li></ul></div><div className="price-options"><p><strong>£35</strong><span>PER HOUR<small>Pay on the day</small></span></p><p><strong>£120</strong><span>BLOCK BOOK<small>4 sessions</small></span></p></div></article><article className="price-card"><div><p className="price-card-label">SMALL GROUP COACHING</p><h3>GROUP<br/>SESSIONS</h3><span className="price-duration">1 HOUR</span><ul><li>Small group sessions</li><li>Develop key goalkeeping skills</li><li>Build confidence and match awareness</li></ul></div><div className="price-options"><p><strong>£15</strong><span>PER HOUR<small>Pay on the day</small></span></p><p><strong>£50</strong><span>PER MONTH<small>Direct Debit · Pay monthly</small></span></p></div></article></div><aside className="frontline-discount"><div><p>FRONT LINE DISCOUNT</p><span>Military · Police · NHS · Fire</span></div><div className="frontline-rates"><p><strong>GROUP</strong><b>£40</b><small>Direct Debit · Pay monthly</small></p><p><strong>1-TO-1</strong><b>£100</b><small>Direct Debit · Pay monthly</small></p></div></aside><p className="pricing-discount-note"><strong>DISCOUNT AVAILABLE:</strong> Discounted 1 on 1 sessions when signed up to monthly group sessions.</p><a className="button pricing-book" href={BOOKING_URL} target="_blank" rel="noopener noreferrer">BOOK YOUR FREE FIRST SESSION <span>→</span></a></section>
+ <Footer/>
+ </main>}
