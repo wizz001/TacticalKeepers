@@ -1,0 +1,3 @@
+import InstagramIcon from './InstagramIcon'
+const items=[['/images/2.jpeg','Goalkeeper training session'],['/images/4.jpeg','Goalkeeper reaction work'],['/images/5.jpeg','Goalkeeper action drill'],['/images/4444.jpeg','Goalkeeper technical training']]
+export default function TrainingGallery(){return <section className="gallery-section" id="gallery"><div className="gallery-title"><div><h2>TRAINING IN ACTION</h2><span/></div><p>FOLLOW OUR JOURNEY <a href="https://instagram.com/tacticalkeepers" aria-label="Instagram"><InstagramIcon/></a><a href="https://facebook.com">f</a><small>@tacticalkeepers</small></p></div><div className="gallery-grid">{items.map(([src,alt])=><figure key={src}><img src={src} alt={alt}/></figure>)}</div></section>}

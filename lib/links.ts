@@ -1,0 +1,1 @@
+export const BOOKING_URL='https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAa__Xl0nKVUOTYyNkYyUTRPUDBNNlhFWjlYSFlXSzAwNC4u'

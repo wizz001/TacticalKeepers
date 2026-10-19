@@ -1,0 +1,2 @@
+const benefits=[{icon:'⚙',title:<>TECHNICAL<br/>DEVELOPMENT</>,text:<>Build strong fundamentals<br/>and refine your technique.</>},{icon:'♙',title:<>TACTICAL<br/>AWARENESS</>,text:<>Smarter decision making<br/>on and off the ball.</>},{icon:'▥',title:<>GAME READY</>,text:<>Realistic, high intensity<br/>training environments.</>}]
+export default function TrainingBenefits(){return <section className="benefits" id="about">{benefits.map(b=><article key={b.icon}><span className="benefit-icon">{b.icon}</span><h2>{b.title}</h2><p>{b.text}</p></article>)}</section>}
