@@ -1,4 +1,5 @@
 /* Reference-matched header branding and hero headline */
+.hero-bg{background-image:url('/images/hero-stadium.png')}
 .site-header{height:118px;padding:17px 4.5%;gap:34px;background:linear-gradient(#020202 0%,rgba(2,2,2,.9) 58%,transparent 100%)}
 .site-header>.brand .brand-lockup{display:none}
 .site-header>.brand .brand-crest{display:block!important;width:88px;height:82px;filter:drop-shadow(0 2px 6px #000)}
