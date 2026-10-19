@@ -5,17 +5,19 @@ type Errors=Partial<Record<'name'|'email'|'age'|'subject'|'message',string>>
 
 export default function ContactForm(){
  const[errors,setErrors]=useState<Errors>({});const[success,setSuccess]=useState(false)
- function submit(e:FormEvent<HTMLFormElement>){e.preventDefault();const form=new FormData(e.currentTarget);const next:Errors={};
+ function submit(e:FormEvent<HTMLFormElement>){e.preventDefault();const form=new FormData(e.currentTarget);const next:Errors={}
   if(!String(form.get('name')||'').trim())next.name='Please enter your name.'
   const email=String(form.get('email')||'').trim();if(!email)next.email='Please enter your email address.';else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))next.email='Please enter a valid email address.'
   if(!String(form.get('age')||'').trim())next.age="Please enter the goalkeeper's age."
   if(!String(form.get('subject')||'').trim())next.subject='Please choose an enquiry type.'
   if(!String(form.get('message')||'').trim())next.message='Please enter your message.'
   setErrors(next);if(Object.keys(next).length)return
-  // TODO: Connect this validated payload to the production email service or API endpoint.
+  const subject=String(form.get('subject')||'General enquiry')
+  const body=[`Name: ${String(form.get('name')||'')}`,`Email: ${email}`,`Phone number: ${String(form.get('phone')||'Not provided')}`,`Goalkeeper age: ${String(form.get('age')||'')}`,`Enquiry type: ${subject}`,'','Message:',String(form.get('message')||'')].join('\n')
+  window.location.href=`mailto:Tacticalkeepers@hotmail.com?subject=${encodeURIComponent(`Tactical Keepers: ${subject}`)}&body=${encodeURIComponent(body)}`
   setSuccess(true);e.currentTarget.reset()
  }
- if(success)return <div className="contact-success" role="status"><span>MESSAGE RECEIVED</span><h2>THANK YOU.</h2><p>Thanks for getting in touch. We’ll get back to you as soon as possible.</p><button type="button" onClick={()=>setSuccess(false)}>SEND ANOTHER MESSAGE →</button></div>
+ if(success)return <div className="contact-success" role="status"><span>EMAIL READY</span><h2>THANK YOU.</h2><p>Your email app has opened with the message ready to send.</p><button type="button" onClick={()=>setSuccess(false)}>SEND ANOTHER MESSAGE →</button></div>
  return <form className="contact-form" noValidate onSubmit={submit}>
   <div className="form-row"><Field label="Name" name="name" required error={errors.name}/><Field label="Email" name="email" type="email" required error={errors.email}/></div>
   <div className="form-row"><Field label="Phone number" name="phone" type="tel"/><Field label="Goalkeeper age" name="age" inputMode="numeric" required error={errors.age}/></div>
