@@ -8,8 +8,8 @@ frontend:
       commands:
         - npm run build
   artifacts:
-    # This project uses Next.js static export; publish the generated HTML and assets.
-    baseDirectory: out
+    # Amplify Hosting Compute deploys Next.js 14+ static exports from .next.
+    baseDirectory: .next
     files:
       - '**/*'
   cache:
