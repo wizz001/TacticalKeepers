@@ -3,7 +3,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import {BOOKING_URL} from '@/lib/links'
 
-export const metadata:Metadata={title:'Goalkeeper Training Prices | Tactical Keepers',description:'Tactical Keepers goalkeeper training prices for 1-to-1 and group sessions in Cheshire.'}
+export const metadata:Metadata={title:'Goalkeeper Training Prices in Cheshire',description:'View Tactical Keepers prices for one-to-one and group goalkeeper training sessions in Cheshire.',alternates:{canonical:'/prices'}}
 
 export default function PricesPage(){return <main className="training-page contact-page prices-page"><Header/>
  <section className="contact-intro"><div><p>PRICES</p><h1>TRAINING<br/><span>PRICELIST</span></h1><p>Choose the session format that best supports your development.</p></div></section>

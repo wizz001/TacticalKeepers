@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-export const metadata: Metadata = { title: 'About Josh Ollerenshaw | Tactical Keepers', description: 'The playing career, coaching experience and philosophy behind Tactical Keepers.' }
+export const metadata: Metadata = { title: 'About Josh Ollerenshaw', description: 'Learn about Josh Ollerenshaw’s playing career, coaching experience and the philosophy behind Tactical Keepers in Cheshire.', alternates: { canonical: '/about' } }
 
 const people = [['Mark Crossley.jpeg', 'MARK CROSSLEY', 'Former Premier League goalkeeper & Welsh international'], ['Sam Johnstone.jpeg', 'SAM JOHNSTONE', 'Goalkeeper'], ['Joel Coleman.jpeg', 'JOEL COLEMAN', 'Goalkeeper'], ['Paddy Kenny.jpeg', 'PADDY KENNY', 'Goalkeeper'], ['Tomasz Kuszczak.jpeg', 'TOMASZ KUSZCZAK', 'Goalkeeper']]
 

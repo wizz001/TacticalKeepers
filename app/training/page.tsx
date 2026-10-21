@@ -3,8 +3,10 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import VideoHighlights from '@/components/VideoHighlights'
 import {BOOKING_URL} from '@/lib/links'
+import { absoluteUrl, socialImage } from '@/lib/site'
 
-export const metadata:Metadata={title:'Goalkeeper Training | Tactical Keepers Cheshire',description:'Professional goalkeeper training in Cheshire focused on technique, decision-making, confidence, game understanding and match-ready performance.'}
+export const metadata:Metadata={title:'Goalkeeper Training in Cheshire',description:'Goalkeeper training in Cheshire from Tactical Keepers: technical coaching, decision-making, confidence and match-ready development.',alternates:{canonical:'/training'},openGraph:{url:'/training',images:[{url:socialImage,width:512,height:512,alt:'Tactical Keepers crest'}]}}
+const serviceSchema={'@context':'https://schema.org','@type':'Service','@id':absoluteUrl('/training#service'),name:'Goalkeeper training',description:'Goalkeeper coaching focused on technique, decision-making and mentality in Cheshire.',provider:{'@id':absoluteUrl('/#organization')},areaServed:{'@type':'AdministrativeArea',name:'Cheshire, UK'},url:absoluteUrl('/training')}
 
 const pillars=[
  {n:'01',title:'TECHNIQUE',role:'HOW YOU EXECUTE',copy:'Build repeatable movement, handling, footwork and positioning that hold up under pressure.',focus:['Set position','Footwork','Handling','Diving technique','Recovery movement','Catching','Parrying','Distribution mechanics']},
@@ -26,7 +28,7 @@ const trainingVideos=[
  {src:'WhatsApp Video 2026-10-04 at 19.22.43-loud.mp4',category:'TRAINING',title:'Session highlight 08'}
 ]
 
-export default function TrainingPage(){return <main className="training-page"><Header/>
+export default function TrainingPage(){return <main className="training-page"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(serviceSchema)}} /><Header/>
  <section className="training-hero"><video className="training-hero-video" autoPlay muted loop playsInline aria-hidden="true"><source src="/videos/home-hero.mp4" type="video/mp4"/></video><div className="training-hero-copy"><p className="tk-label">TRAINING</p><h1><span>TRAIN</span><span>WITH</span><strong>PURPOSE</strong></h1><p className="training-hook">Every session has a reason.</p><p>Tactical Keepers training is designed to build better habits, sharper decisions, stronger technique and more confident goalkeepers.</p><div><a className="button" href={BOOKING_URL} target="_blank" rel="noopener noreferrer">BOOK A SESSION <span>→</span></a><a className="button button-outline" href="#method">SEE HOW WE TRAIN</a></div></div></section>
 
  <section className="training-pillars"><div className="pillar-ghost" aria-hidden="true">03</div><header><div><p className="tk-label">THREE CORE PILLARS</p><i/></div><h2>THE TACTICAL<br/><span>KEEPERS WAY</span></h2></header><div className="pillar-list">{pillars.map(p=><article key={p.n}><div className="pillar-visual" aria-hidden="true"/><div className="pillar-number">{p.n}</div><p className="pillar-role">{p.role}</p><h3>{p.title}</h3><p className="pillar-description">{p.copy}</p><div className="pillar-rule"/><ul>{p.focus.map(x=><li key={x}>{x}</li>)}</ul></article>)}</div><div className="pillar-statement"><span>TECHNIQUE BUILDS <b>THE ACTION.</b></span><span>DECISIONS CHOOSE <b>THE MOMENT.</b></span><span>MENTALITY DELIVERS <b>UNDER PRESSURE.</b></span></div></section>

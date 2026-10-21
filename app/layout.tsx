@@ -5,10 +5,16 @@ import './training.css'
 import './gallery.css'
 import './gallery-extra.css'
 import './contact.css'
+import { absoluteUrl, siteDescription, siteName, siteUrl, socialImage } from '@/lib/site'
 export const metadata: Metadata = {
-  title: 'Tactical Keepers | Professional Goalkeeper Training in Cheshire',
-  description: 'Professional goalkeeper coaching in Cheshire focused on technical development, tactical awareness and game-ready training.',
-  applicationName: 'Tactical Keepers',
+  metadataBase: siteUrl,
+  title: { default: 'Tactical Keepers | Goalkeeper Training in Cheshire', template: '%s | Tactical Keepers' },
+  description: siteDescription,
+  applicationName: siteName,
+  alternates: { canonical: '/' },
+  robots: { index: true, follow: true },
+  openGraph: { type: 'website', locale: 'en_GB', siteName, title: 'Tactical Keepers | Goalkeeper Training in Cheshire', description: siteDescription, url: '/', images: [{ url: socialImage, width: 512, height: 512, alt: 'Tactical Keepers crest' }] },
+  twitter: { card: 'summary', title: 'Tactical Keepers | Goalkeeper Training in Cheshire', description: siteDescription, images: [socialImage] },
   manifest: '/manifest.webmanifest',
   icons: {
     icon: [
@@ -26,4 +32,5 @@ export const viewport: Viewport = {
   viewportFit: 'cover',
   themeColor: '#050505',
 }
-export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) { return <html lang="en"><body>{children}</body></html> }
+const organisationSchema = {'@context':'https://schema.org','@type':'Organization','@id':absoluteUrl('/#organization'),name:siteName,url:absoluteUrl('/'),logo:socialImage,description:siteDescription,email:'Tacticalkeepers@hotmail.com',areaServed:{'@type':'AdministrativeArea',name:'Cheshire, UK'},sameAs:['https://instagram.com/tacticalkeepers','https://www.tiktok.com/@tactical.keepers']}
+export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) { return <html lang="en"><body>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationSchema) }} /></body></html> }

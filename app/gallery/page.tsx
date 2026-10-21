@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 import GalleryExperience,{type GalleryItem} from '@/components/GalleryExperience'
 import {BOOKING_URL} from '@/lib/links'
 
-export const metadata:Metadata={title:'Gallery | Tactical Keepers Goalkeeper Training'}
+export const metadata:Metadata={title:'Goalkeeper Training Gallery',description:'See Tactical Keepers goalkeeper coaching sessions, technical drills and training moments in Cheshire.',alternates:{canonical:'/gallery'}}
 const gallery:GalleryItem[]=[
   {id:1,src:'/images/2.jpeg',alt:'Tactical Keepers coach laughing during a goalkeeper session',category:'training',caption:'Coach-led training',layout:'feature',width:778,height:1686},
   {id:2,src:'/images/4.jpeg',alt:'Goalkeeper in a Tactical Keepers coaching session',category:'training',caption:'Goalkeeper coaching',layout:'portrait',width:944,height:2048},
