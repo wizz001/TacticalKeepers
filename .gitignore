@@ -3,3 +3,8 @@ node_modules/
 out/
 *.tsbuildinfo
 *.zip
+.env*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db

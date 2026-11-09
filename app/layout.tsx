@@ -5,6 +5,7 @@ import './training.css'
 import './gallery.css'
 import './gallery-extra.css'
 import './contact.css'
+import './reviews.css'
 import { absoluteUrl, siteDescription, siteName, siteUrl, socialImage } from '@/lib/site'
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -32,5 +33,17 @@ export const viewport: Viewport = {
   viewportFit: 'cover',
   themeColor: '#050505',
 }
-const organisationSchema = {'@context':'https://schema.org','@type':'Organization','@id':absoluteUrl('/#organization'),name:siteName,url:absoluteUrl('/'),logo:socialImage,description:siteDescription,email:'Tacticalkeepers@hotmail.com',areaServed:{'@type':'AdministrativeArea',name:'Cheshire, UK'},sameAs:['https://instagram.com/tacticalkeepers','https://www.tiktok.com/@tactical.keepers']}
+const organisationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': absoluteUrl('/#organization'),
+  name: siteName,
+  url: absoluteUrl('/'),
+  logo: socialImage,
+  description: siteDescription,
+  email: 'Tacticalkeepers@hotmail.com',
+  areaServed: { '@type': 'AdministrativeArea', name: 'Cheshire, UK' },
+  sameAs: ['https://instagram.com/tacticalkeepers', 'https://www.tiktok.com/@tactical.keepers'],
+}
+
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) { return <html lang="en"><body>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationSchema) }} /></body></html> }
